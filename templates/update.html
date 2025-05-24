@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Weather Record</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
+        .form-container { max-width: 600px; margin: 30px auto; background-color: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .form-label { font-weight: 500; }
+        .btn-group { display: flex; gap: 10px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-container">
+        <h2 class="text-center mb-4">✏️ Update Weather Record</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label class="form-label">City:</label>
+                <input type="text" name="city" class="form-control" value="{{ record.city }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Temperature (°C):</label>
+                <input type="number" step="0.1" name="temperature" class="form-control" value="{{ record.temperature }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Description:</label>
+                <input type="text" name="description" class="form-control" value="{{ record.description }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Humidity (%):</label>
+                <input type="number" step="1" min="0" max="100" name="humidity" class="form-control" value="{{ record.humidity or '' }}">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Wind Speed (m/s):</label>
+                <input type="number" step="0.1" name="wind_speed" class="form-control" value="{{ record.wind_speed or '' }}">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Max Temperature (°C):</label>
+                <input type="number" step="0.1" name="temp_max" class="form-control" value="{{ record.temp_max or '' }}">
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Min Temperature (°C):</label>
+                <input type="number" step="0.1" name="temp_min" class="form-control" value="{{ record.temp_min or '' }}">
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary"> Update</button>
+                <a href="{{ url_for('records') }}" class="btn btn-secondary"> Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
