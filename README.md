@@ -21,7 +21,7 @@ A simple Flask web application that allows users to search and view real-time we
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Mariam025/weather-app.git
+git clone https://github.com/Mariam-Mo20/weather-app.git
 cd weather-app
 
 # 2. (Optional but recommended) Create a virtual environment
