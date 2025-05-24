@@ -21,6 +21,7 @@ class WeatherRecord(db.Model):
     wind_speed = db.Column(db.Float, nullable=True)
     temp_max = db.Column(db.Float, nullable=True)
     temp_min = db.Column(db.Float, nullable=True)
+    icon = db.Column(db.String(10), nullable=True)
 
 # Resolve a location from user input
 def resolve_location(query):
